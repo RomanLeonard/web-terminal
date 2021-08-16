@@ -1,0 +1,134 @@
+@import 'colors';
+
+html, body{
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  background-color: $background-color;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+// eg
+#pict{
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  width: 100vw;
+}
+// minimize/maximize window
+.extend{
+  width: 90vw !important;
+  height: 90vh !important;
+}
+
+.background{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 50vh;
+
+  .terminal-body{
+    height: 100%;
+    width: 100%;
+    &:hover{
+      .terminal{
+        box-shadow: 0px 5px 20px -10px $window-shadow;
+      }
+    }
+    .title{
+      background-color: $window-color;
+      font-size: .9em;
+      color: $window-title;
+      position: relative;
+      height: 30px;
+      cursor: pointer;
+      &:hover{
+        .controls a{
+          opacity: 1;
+        }
+      }
+      span{
+        display: inline-block;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 9px 0 5px 10px;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        user-select: none;
+      }
+      .controls{ 
+        position: absolute;
+        top: 6px;
+        right: 15px;
+  
+        a{
+          text-decoration: none;
+          opacity: 0;
+          transition-duration: 150ms;
+          &:hover{
+            &:hover{
+              i{
+                color: lighten($window-color, 50%);
+              }
+            }
+          }
+          i{
+            font-size: 20px;
+            //color: rgba(206, 166, 185, 0.25);
+            color: lighten($window-color, 10%);
+            transition-duration: 150ms;
+          }
+          &:last-child{
+            &:hover{
+              i{
+                color: rgba(247, 58, 58, 0.644);
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .terminal{
+      background-color: $terminal-background-color;
+      width: 100%;
+      height: 100%;
+      border: 3px solid $window-color;
+      color: $terminal-text-color;
+      transition-duration: 150ms;
+    }
+  }
+  
+}
+
+.terminal-output div{
+  background-color: $terminal-background-color !important;
+
+  span{
+    background-color: $terminal-background-color !important;
+  }
+}
+
+// responsive
+@media screen and (max-width: 1150px) {
+  .background{
+    width: 70vw;
+    height: 70vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .background{
+    width: 95vw;
+    height: 90vh;
+
+    .maximizebtn{display: none !important;}
+    .minimizebtn{display: none !important;}
+  }
+}

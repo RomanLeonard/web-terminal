@@ -1,0 +1,31 @@
+// $%^L
+
+// window
+$window-color: rgb(66, 56, 155);
+
+$window-shadow: darken($window-color, 15%);
+$window-title: lighten($window-color, 60%);
+// background
+$background-color: darken($window-color, 35%);
+
+
+
+// terminal
+$terminal-text-color: lighten($window-color, 15%);
+$terminal-background-color: #000;
+
+
+
+
+
+
+// // background
+// $background-color: rgba(22, 13, 18, 1);
+
+// // window
+// $window-color: #534;
+// $window-shadow: rgba(85, 51, 68, 0.5);
+// $window-title: rgba(252, 212, 232, .8);
+
+// // terminal
+// $terminal-text-color:rgba(255, 241, 248, 0.8);

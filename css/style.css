@@ -1,0 +1,117 @@
+html, body {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  background-color: #0a0918;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#pict {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  width: 100vw;
+}
+
+.extend {
+  width: 90vw !important;
+  height: 90vh !important;
+}
+
+.background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 50vh;
+}
+.background .terminal-body {
+  height: 100%;
+  width: 100%;
+}
+.background .terminal-body:hover .terminal {
+  box-shadow: 0px 5px 20px -10px #2a2463;
+}
+.background .terminal-body .title {
+  background-color: #42389b;
+  font-size: 0.9em;
+  color: white;
+  position: relative;
+  height: 30px;
+  cursor: pointer;
+}
+.background .terminal-body .title:hover .controls a {
+  opacity: 1;
+}
+.background .terminal-body .title span {
+  display: inline-block;
+  font-family: "Courier New", Courier, monospace;
+  padding: 9px 0 5px 10px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.background .terminal-body .title .controls {
+  position: absolute;
+  top: 6px;
+  right: 15px;
+}
+.background .terminal-body .title .controls a {
+  text-decoration: none;
+  opacity: 0;
+  transition-duration: 150ms;
+}
+.background .terminal-body .title .controls a:hover:hover i {
+  color: #e1dff3;
+}
+.background .terminal-body .title .controls a i {
+  font-size: 20px;
+  color: #5549bd;
+  transition-duration: 150ms;
+}
+.background .terminal-body .title .controls a:last-child:hover i {
+  color: rgba(247, 58, 58, 0.644);
+}
+.background .terminal-body .terminal {
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #42389b;
+  color: #665cc4;
+  transition-duration: 150ms;
+}
+
+.terminal-output div {
+  background-color: #000 !important;
+}
+.terminal-output div span {
+  background-color: #000 !important;
+}
+
+@media screen and (max-width: 1150px) {
+  .background {
+    width: 70vw;
+    height: 70vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  .background {
+    width: 95vw;
+    height: 90vh;
+  }
+  .background .maximizebtn {
+    display: none !important;
+  }
+  .background .minimizebtn {
+    display: none !important;
+  }
+}/*# sourceMappingURL=style.css.map */

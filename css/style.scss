@@ -6,7 +6,7 @@ html, body{
   padding: 0;
   margin: 0;
   position: relative;
-  background-color: $background-color;
+  background-color: var(--background-color);
 }
 
 *{
@@ -50,13 +50,13 @@ html, body{
     width: 100%;
     &:hover{
       .terminal{
-        box-shadow: 0px 5px 20px -10px $window-shadow;
+        box-shadow: 0px 5px 20px -10px var(--window-shadow);
       }
     }
     .title{
-      background-color: $window-color;
+      background-color: var(--window-color);
       font-size: .9em;
-      color: $window-title;
+      color: var(--window-title);
       position: relative;
       height: 30px;
       cursor: grabbing;
@@ -85,14 +85,14 @@ html, body{
           &:hover{
             &:hover{
               i{
-                color: lighten($window-color, 50%);
+                color: var(--window-buttons-hover);
               }
             }
           }
           i{
             font-size: 20px;
             //color: rgba(206, 166, 185, 0.25);
-            color: lighten($window-color, 10%);
+            color: var(--window-buttons);
             transition-duration: 150ms;
           }
           &:last-child{
@@ -107,11 +107,11 @@ html, body{
     }
   
     .terminal{
-      background-color: $terminal-background-color;
+      background-color: var(--terminal-background-color);
       width: 100%;
       height: 100%;
-      border: 3px solid $window-color;
-      color: $terminal-text-color;
+      border: 3px solid var(--window-color);
+      color: var(--terminal-text-color);
       transition-duration: 150ms;
     }
   }
@@ -119,10 +119,10 @@ html, body{
 }
 
 .terminal-output div{
-  background-color: $terminal-background-color !important;
+  background-color: var(--terminal-background-color) !important;
 
   span{
-    background-color: $terminal-background-color !important;
+    background-color: var(--terminal-background-color) !important;
   }
 }
 

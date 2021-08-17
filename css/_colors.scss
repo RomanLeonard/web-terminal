@@ -1,18 +1,41 @@
 // $%^L
 
 // window
-$window-color: rgb(94, 198, 197);
 
-$window-shadow: darken($window-color, 15%);
-$window-title: lighten($window-color, 60%);
-// background
-$background-color: darken($window-color, 35%);
-
+:root {
+  --hue: 100;
+  --saturation: 50%;
+  --light: 45%;
 
 
-// terminal
-$terminal-text-color: lighten($window-color, 15%);
-$terminal-background-color: #000;
+
+  --window-color: hsl(var(--hue), var(--saturation), var(--light));
+  --window-title: hsl(var(--hue), var(--saturation), calc(var(--light) + 60%));
+  --window-buttons: hsl(var(--hue), var(--saturation), calc(var(--light) + 10%));
+  --window-buttons-hover: hsl(var(--hue), var(--saturation), calc(var(--light) + 50%));
+
+  --window-shadow: hsl(var(--hue), var(--saturation), calc(var(--light) - 15%));
+
+
+  // terminal
+  --terminal-text-color: hsl(var(--hue), var(--saturation), calc(var(--light) + 15%));
+  --terminal-background-color: #000;
+
+  //backround
+  --background-color: hsl(var(--hue), var(--saturation), calc(var(--light) - 35%));
+
+}
+  //$window-color: rgb(94, 198, 197);
+  //$window-shadow: darken($window-color, 15%);
+  //$window-title: lighten($window-color, 60%);
+  // background
+  //$background-color: darken($window-color, 35%);
+
+
+
+  // terminal
+  //$terminal-text-color: lighten($window-color, 15%);
+  //$terminal-background-color: #000;
 
 
 

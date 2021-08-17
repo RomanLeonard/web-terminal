@@ -111,6 +111,24 @@ OOOOOOOOOOOOOOOOOOOOOOOOOOOO</pre>`)
       restart: function (){
         location.reload();
       },
+      color: function (color){
+          let colors = $(`<pre>
+    
+          <span class="red" style="color: red">RED</span>
+          <span id="green" style="color: green">GREEN</span>
+          <span id="orange" style="color: orange">ORANGE</span>
+          <span id="brown" style="color: brown">BROWN</span>
+          <span id="blue" style="color: blue">BLUE</span>
+          <span id="cyan" style="color: cyan">CYAN</span>
+  
+          </pre>`);
+
+          this.echo(colors)
+          document.documentElement.style.setProperty("--hue", "50")
+          document.documentElement.style.setProperty("--saturation", "100%")
+          document.documentElement.style.setProperty("--light", "100%")
+
+      },
      list: function(){
         var list = $(`<pre>
         
@@ -211,6 +229,17 @@ OOOOOOOOOOOOOOOOOOOOOOOOOOOO</pre>`)
       minimize_btn.css('display', 'inline-block');
     }
   });
+
+
+  //listen for color changes
+  let color_red = $('.red');
+
+  color_red.on('click', function (e){
+    e.preventDefault()
+
+    console.log("red")
+  });
+
 
 });
 

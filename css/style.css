@@ -1,10 +1,24 @@
+:root {
+  --hue: 100;
+  --saturation: 50%;
+  --light: 45%;
+  --window-color: hsl(var(--hue), var(--saturation), var(--light));
+  --window-title: hsl(var(--hue), var(--saturation), calc(var(--light) + 60%));
+  --window-buttons: hsl(var(--hue), var(--saturation), calc(var(--light) + 10%));
+  --window-buttons-hover: hsl(var(--hue), var(--saturation), calc(var(--light) + 50%));
+  --window-shadow: hsl(var(--hue), var(--saturation), calc(var(--light) - 15%));
+  --terminal-text-color: hsl(var(--hue), var(--saturation), calc(var(--light) + 15%));
+  --terminal-background-color: #000;
+  --background-color: hsl(var(--hue), var(--saturation), calc(var(--light) - 35%));
+}
+
 html, body {
   width: 100vw;
   height: 100vh;
   padding: 0;
   margin: 0;
   position: relative;
-  background-color: #1e5453;
+  background-color: var(--background-color);
 }
 
 * {
@@ -48,12 +62,12 @@ html, body {
   width: 100%;
 }
 .background .terminal-body:hover .terminal {
-  box-shadow: 0px 5px 20px -10px #389f9e;
+  box-shadow: 0px 5px 20px -10px var(--window-shadow);
 }
 .background .terminal-body .title {
-  background-color: #5ec6c5;
+  background-color: var(--window-color);
   font-size: 0.9em;
-  color: white;
+  color: var(--window-title);
   position: relative;
   height: 30px;
   cursor: grabbing;
@@ -80,30 +94,30 @@ html, body {
   transition-duration: 150ms;
 }
 .background .terminal-body .title .controls a:hover:hover i {
-  color: white;
+  color: var(--window-buttons-hover);
 }
 .background .terminal-body .title .controls a i {
   font-size: 20px;
-  color: #84d3d3;
+  color: var(--window-buttons);
   transition-duration: 150ms;
 }
 .background .terminal-body .title .controls a:last-child:hover i {
   color: rgba(247, 58, 58, 0.644);
 }
 .background .terminal-body .terminal {
-  background-color: #000;
+  background-color: var(--terminal-background-color);
   width: 100%;
   height: 100%;
-  border: 3px solid #5ec6c5;
-  color: #96dad9;
+  border: 3px solid var(--window-color);
+  color: var(--terminal-text-color);
   transition-duration: 150ms;
 }
 
 .terminal-output div {
-  background-color: #000 !important;
+  background-color: var(--terminal-background-color) !important;
 }
 .terminal-output div span {
-  background-color: #000 !important;
+  background-color: var(--terminal-background-color) !important;
 }
 
 @media screen and (max-width: 1150px) {

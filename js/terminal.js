@@ -1,11 +1,3 @@
-// $('.terminal').terminal({
-//   hello: function(what) {
-//     this.echo('Hello, ' + what + '. Wellcome to this terminal.');
-//   }
-// }, {
-//   greetings: 'My First Web Terminal'
-// });
-
 $(document).ready(function(){
   var session_active = null;
   $('.terminal').terminal(
@@ -143,7 +135,7 @@ OOOOOOOOOOOOOOOOOOOOOOOOOOOO</pre>`)
         00000000 00000000 00000000 00000--- 00000000 0------0 00000000 00000000 00000000 00--0000 00000000 00000000
         00000000 00000000 00000000 0000---0 00000000 00----00 00000000 00000000 00000000 00--0000 00000000 00000000
         00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 0000000- -------0 00000000 00000000
-        00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+        00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 0LEONARD ROMAN000
         
         </pre>`);
         this.echo(leo_char);
@@ -167,7 +159,6 @@ OOOOOOOOOOOOOOOOOOOOOOOOOOOO</pre>`)
   });
 
 
-
   //minimize/maximize window
 
   // maximize btn
@@ -189,7 +180,7 @@ OOOOOOOOOOOOOOOOOOOOOOOOOOOO</pre>`)
   });
   // double click
   $('.title').on('dblclick',function(){
-    if(window_maximized == true){
+    if(window_maximized === true){
       $('.maximizebtn').css('display', 'inline-block');
       $('.minimizebtn').css('display', 'none');
       $('.background').removeClass('extend');

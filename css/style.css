@@ -4,7 +4,7 @@ html, body {
   padding: 0;
   margin: 0;
   position: relative;
-  background-color: #0a0918;
+  background-color: #1e5453;
 }
 
 * {
@@ -36,10 +36,10 @@ html, body {
   width: 100%;
 }
 .background .terminal-body:hover .terminal {
-  box-shadow: 0px 5px 20px -10px #2a2463;
+  box-shadow: 0px 5px 20px -10px #389f9e;
 }
 .background .terminal-body .title {
-  background-color: #42389b;
+  background-color: #5ec6c5;
   font-size: 0.9em;
   color: white;
   position: relative;
@@ -55,10 +55,7 @@ html, body {
   padding: 9px 0 5px 10px;
   font-size: 15px;
   letter-spacing: 0.5px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .background .terminal-body .title .controls {
   position: absolute;
@@ -71,11 +68,11 @@ html, body {
   transition-duration: 150ms;
 }
 .background .terminal-body .title .controls a:hover:hover i {
-  color: #e1dff3;
+  color: white;
 }
 .background .terminal-body .title .controls a i {
   font-size: 20px;
-  color: #5549bd;
+  color: #84d3d3;
   transition-duration: 150ms;
 }
 .background .terminal-body .title .controls a:last-child:hover i {
@@ -85,8 +82,8 @@ html, body {
   background-color: #000;
   width: 100%;
   height: 100%;
-  border: 3px solid #42389b;
-  color: #665cc4;
+  border: 3px solid #5ec6c5;
+  color: #96dad9;
   transition-duration: 150ms;
 }
 
@@ -114,4 +111,6 @@ html, body {
   .background .minimizebtn {
     display: none !important;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

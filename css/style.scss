@@ -59,7 +59,7 @@ html, body{
       color: $window-title;
       position: relative;
       height: 30px;
-      cursor: pointer;
+      cursor: grabbing;
       &:hover{
         .controls a{
           opacity: 1;

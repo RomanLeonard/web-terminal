@@ -1,3 +1,4 @@
+// $%^L
 $(document).ready(function(){
 
   $('.terminal-title').on({
@@ -167,7 +168,7 @@ OOOOOOOOOOOOOOOOOOOOOOOOOOOO</pre>`)
     },
   );
 
-  // eg
+  // egg $%^L
   $('.termbtn').on('click', function(){
     $('#pict').css('display', 'block');
     $('#pict').on('click', function(){
@@ -175,40 +176,39 @@ OOOOOOOOOOOOOOOOOOOOOOOOOOOO</pre>`)
     });
   });
 
-
-  //minimize/maximize window
+  //terminal variables
+  let maximize_btn = $('.maximizebtn');
+  let minimize_btn = $('.minimizebtn');
+  let background = $('.background');
+  let terminal_body = $('.terminal-body');
 
   // maximize btn
-  var window_maximized = false;
-  $('.maximizebtn').on('click', function(){
-    $('.maximizebtn').css('display', 'none');
-    $('.minimizebtn').css('display', 'inline-block');
-    $('.background').addClass('extend');
-    $('.terminal-body').addClass('center');
-    window_maximized = true;
+  maximize_btn.on('click', function(){
+    maximize_btn.css('display', 'none');
+    minimize_btn.css('display', 'inline-block');
+    background.addClass('extend');
+    terminal_body.addClass('center');
   });
   // minimize btn
-  $('.minimizebtn').on('click', function(){
-    $('.minimizebtn').css('display', 'none');
-    $('.maximizebtn').css('display', 'inline-block');
-    $('.background').removeClass('extend');
-    $('.terminal-body').removeClass('center');
-    window_maximized = false;
+  minimize_btn.on('click', function(){
+    minimize_btn.css('display', 'none');
+    maximize_btn.css('display', 'inline-block');
+    background.removeClass('extend');
+    terminal_body.removeClass('center');
   });
   // double click
   $('.title').on('dblclick',function(){
-    if(window_maximized === true){
-      $('.maximizebtn').css('display', 'inline-block');
-      $('.minimizebtn').css('display', 'none');
-      $('.background').removeClass('extend');
-      $('.terminal-body').removeClass('center');
-      window_maximized = false;
+    if(background.hasClass('extend')){
+      maximize_btn.css('display', 'inline-block');
+      minimize_btn.css('display', 'none');
+      background.removeClass('extend');
+      terminal_body.removeClass('center');
+
     } else{
-      $('.background').addClass('extend');
-      $('.terminal-body').addClass('center');
-      $('.maximizebtn').css('display', 'none');
-      $('.minimizebtn').css('display', 'inline-block');
-      window_maximized = true;
+      background.addClass('extend');
+      terminal_body.addClass('center');
+      maximize_btn.css('display', 'none');
+      minimize_btn.css('display', 'inline-block');
     }
   });
 

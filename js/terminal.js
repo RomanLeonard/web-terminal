@@ -1,4 +1,17 @@
 $(document).ready(function(){
+
+  $('.terminal-title').on({
+    mouseover: function(e){
+      e.preventDefault();
+      $('.terminal-body').draggable()
+    },
+    mouseout: function(e){
+      e.preventDefault();
+      $('.terminal-body').draggable('destroy')
+    }
+  });
+
+
   var session_active = null;
   $('.terminal').terminal(
     {
@@ -82,7 +95,7 @@ OOOOOOOOOOOOOOOOOOOOOOOOOOOO</pre>`)
         var list = $(`<pre>
         
         
-        <span style="color:green">START</span>             <span style="color:red">STOP</span>             <span style="color:orange">EGG</span>             <span>HELP</span>             <span>LIST</span>             
+        <span style="color:green">START</span>             <span style="color:red">STOP</span>             <span style="color:orange">EGG</span>             <span>HELP</span>             <span>LIST</span>             <span>RESTART</span>             
 
 
         </pre>`);
@@ -94,6 +107,9 @@ OOOOOOOOOOOOOOOOOOOOOOOOOOOO</pre>`)
           this.echo('First you must start a session.')
         }
       },
+      restart: function (){
+        location.reload();
+      },
      list: function(){
         var list = $(`<pre>
         
@@ -103,6 +119,7 @@ OOOOOOOOOOOOOOOOOOOOOOOOOOOO</pre>`)
         <span>HELP</span>..........................<span>List available commands</span>
         <span>HELP2</span>.........................<span>List all available commands (also hidden ones)</span>
         <span>LIST</span>..........................<span>Shows a list with details</span>
+        <span style="color: yellow;">RESTART</span>.......................<span>Reload window</span>
         
         </pre>`)
 
@@ -166,16 +183,16 @@ OOOOOOOOOOOOOOOOOOOOOOOOOOOO</pre>`)
   $('.maximizebtn').on('click', function(){
     $('.maximizebtn').css('display', 'none');
     $('.minimizebtn').css('display', 'inline-block');
-
     $('.background').addClass('extend');
+    $('.terminal-body').addClass('center');
     window_maximized = true;
   });
   // minimize btn
   $('.minimizebtn').on('click', function(){
     $('.minimizebtn').css('display', 'none');
     $('.maximizebtn').css('display', 'inline-block');
-
     $('.background').removeClass('extend');
+    $('.terminal-body').removeClass('center');
     window_maximized = false;
   });
   // double click
@@ -184,9 +201,11 @@ OOOOOOOOOOOOOOOOOOOOOOOOOOOO</pre>`)
       $('.maximizebtn').css('display', 'inline-block');
       $('.minimizebtn').css('display', 'none');
       $('.background').removeClass('extend');
+      $('.terminal-body').removeClass('center');
       window_maximized = false;
     } else{
       $('.background').addClass('extend');
+      $('.terminal-body').addClass('center');
       $('.maximizebtn').css('display', 'none');
       $('.minimizebtn').css('display', 'inline-block');
       window_maximized = true;
